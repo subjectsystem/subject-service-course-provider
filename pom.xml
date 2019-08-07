@@ -24,6 +24,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+        </dependency>
+
         <!-- Projects Settings -->
         <dependency>
             <groupId>com.miyako</groupId>
@@ -48,7 +53,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.miyako.subject.service.course.provider.SubjectServiceCourseProviderApplication</mainClass>
+                    <mainClass>com.miyako.subject.service.user.provider.SubjectServiceCourseProviderApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

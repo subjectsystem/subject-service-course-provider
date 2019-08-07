@@ -6,7 +6,6 @@ import com.miyako.subject.commons.mapper.TbCourseMapper;
 import com.miyako.subject.service.course.api.TbCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

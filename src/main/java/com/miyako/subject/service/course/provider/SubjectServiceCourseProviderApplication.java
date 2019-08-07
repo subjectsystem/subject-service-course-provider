@@ -1,4 +1,4 @@
-package com.miyako.subject.service.course.provider;
+package com.miyako.subject.service.user.provider;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubboConfig;
 import com.alibaba.dubbo.container.Main;
