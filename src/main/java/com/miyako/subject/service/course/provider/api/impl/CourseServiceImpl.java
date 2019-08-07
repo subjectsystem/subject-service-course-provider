@@ -1,10 +1,11 @@
-package com.miyakp.subject.service.course.provider.api.impl;
+package com.miyako.subject.service.course.provider.api.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.miyako.subject.commons.domain.TbCourse;
 import com.miyako.subject.commons.mapper.TbCourseMapper;
 import com.miyako.subject.service.course.api.TbCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -15,8 +16,9 @@ import java.util.List;
  * Author weila
  * Date 2019-08-07-0007 14:08
  */
-@Service(version = "${services.version.course.v1}")
-@Transactional(readOnly = true)
+@Service
+//@Transactional(readOnly = true)
+@Component
 public class CourseServiceImpl implements TbCourseService{
 
     @Autowired
@@ -24,6 +26,7 @@ public class CourseServiceImpl implements TbCourseService{
 
     @Override
     public List<TbCourse> selectAll(){
+        System.out.println("dubbo...");
         return tbCourseMapper.selectAll();
     }
 }

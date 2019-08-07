@@ -1,10 +1,12 @@
-package com.miyakp.subject.service.course.provider;
+package com.miyako.subject.service.course.provider;
 
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubboConfig;
 import com.alibaba.dubbo.container.Main;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tk.mybatis.spring.annotation.MapperScan;
 
@@ -16,9 +18,11 @@ import tk.mybatis.spring.annotation.MapperScan;
  */
 @EnableHystrix
 @EnableHystrixDashboard
-@SpringBootApplication(scanBasePackages = "com.miyako.subject")
+@ImportResource(value = {"classpath:provider.xml"})
+@EnableDubboConfig
 @EnableTransactionManagement
 @MapperScan(basePackages = "com.miyako.subject.commons.mapper")
+@SpringBootApplication(scanBasePackages = "com.miyako.subject")
 public class SubjectServiceCourseProviderApplication{
     public static void main(String[] args) {
         SpringApplication.run(SubjectServiceCourseProviderApplication.class, args);
