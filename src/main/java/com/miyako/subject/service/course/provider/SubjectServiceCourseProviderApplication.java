@@ -2,12 +2,15 @@ package com.miyako.subject.service.user.provider;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubboConfig;
 import com.alibaba.dubbo.container.Main;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import sun.util.locale.provider.LocaleServiceProviderPool;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
@@ -24,8 +27,11 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan(basePackages = "com.miyako.subject.commons.mapper")
 @SpringBootApplication(scanBasePackages = "com.miyako.subject")
 public class SubjectServiceCourseProviderApplication{
+
+    private static Logger logger = LoggerFactory.getLogger(SubjectServiceCourseProviderApplication.class);
+
     public static void main(String[] args) {
         SpringApplication.run(SubjectServiceCourseProviderApplication.class, args);
-        Main.main(args);
+        logger.info("===>:SubjectServiceCourseProviderApplication start...");
     }
 }
