@@ -10,7 +10,6 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import sun.util.locale.provider.LocaleServiceProviderPool;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
