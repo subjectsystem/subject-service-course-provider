@@ -5,6 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.miyako.subject.commons.domain.TbCourse;
 import com.miyako.subject.commons.mapper.TbCourseMapper;
+import com.miyako.subject.dubbo.aop.MethodLog;
 import com.miyako.subject.service.course.api.TbCourseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,33 +32,33 @@ public class CourseServiceImpl implements TbCourseService{
     private TbCourseMapper tbCourseMapper;
 
     @Override
+    @MethodLog(value = "CourseServiceImpl", operationType = "数据库访问", operationName = "selectAll")
     public List<TbCourse> selectAll(){
-        logger.info("===>:CourseServiceImpl select all...");
         return tbCourseMapper.selectAll();
     }
 
     @Override
+    @MethodLog(value = "CourseServiceImpl", operationType = "数据库访问", operationName = "selectById",operationArgs = "课程id")
     public TbCourse selectById(Integer id){
-        logger.info("===>:CourseServiceImpl select by Id...");
         return tbCourseMapper.selectByPrimaryKey(id);
     }
 
     @Override
+    @MethodLog(value = "CourseServiceImpl", operationType = "数据库访问", operationName = "selectOne",operationArgs = "课程id")
     public TbCourse selectOne(TbCourse tbCourse){
-        logger.info("===>:CourseServiceImpl select one...");
         return tbCourseMapper.selectOne(tbCourse);
     }
 
     @Override
+    @MethodLog(value = "CourseServiceImpl", operationType = "数据库访问", operationName = "insert",operationArgs = "课程")
     public Integer insert(TbCourse tbCourse){
-        logger.info("===>:UserServiceImpl insert...");
         return tbCourseMapper.insert(tbCourse);
     }
 
 
     @Override
+    @MethodLog(value = "CourseServiceImpl", operationType = "数据库访问", operationName = "page",operationArgs = "分页信息")
     public PageInfo<TbCourse> page(int pageNum, int pageSize){
-        logger.info("===>:CourseServiceImpl select page...");
         Example example = new Example(TbCourse.class);
         PageHelper.startPage(pageNum, pageSize);
         PageInfo<TbCourse> pageInfo = new PageInfo<>(tbCourseMapper.selectByExample(example));
@@ -65,8 +66,8 @@ public class CourseServiceImpl implements TbCourseService{
     }
 
     @Override
+    @MethodLog(value = "CourseServiceImpl", operationType = "数据库访问", operationName = "info",operationArgs = "课程")
     public int update(TbCourse tbCourse){
-        logger.info("===>:CourseServiceImpl update...");
         return tbCourseMapper.updateByPrimaryKey(tbCourse);
     }
 }

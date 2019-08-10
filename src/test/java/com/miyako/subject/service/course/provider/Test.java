@@ -27,33 +27,33 @@ public class Test{
 
     @org.junit.Test
     public void insertCourse(){
-        logger.info("insert course...");
-        String[] num = {"TX", "SW","JS", "ZD", "CM", "JX"};
-        Random random = new Random();
-        for (int i=1; i<21; i++){
-            TbCourse course = new TbCourse();
-            course.setTitle("测试课程-"+i);
-            course.setTeacherid(1);
-            course.setCollegeid(1);
-            course.setCoursecount(random.nextInt(16)+50);
-            course.setCoursenum(num[random.nextInt(18)%6]);
-            logger.info(tbCourseService.insert(course).toString());
-        }
+        //logger.info("insert course...");
+        //String[] num = {"TX", "SW","JS", "ZD", "CM", "JX"};
+        //Random random = new Random();
+        //for (int i=1; i<21; i++){
+        //    TbCourse course = new TbCourse();
+        //    course.setTitle("测试课程-"+i);
+        //    course.setTeacherid(1);
+        //    course.setCollegeid(1);
+        //    course.setCoursecount(random.nextInt(16)+50);
+        //    course.setCoursenum(num[random.nextInt(18)%6]);
+        //    logger.info(tbCourseService.insert(course).toString());
+        //}
     }
 
     @org.junit.Test
     public void editCourse(){
-        logger.info("edit course...");
-        Random random = new Random();
-        for (int i=1; i<21; i++){
-            TbCourse course = tbCourseService.selectById(i + 2);
-
-            String num = String.format("%s%s%s%s",course.getCoursenum().substring(0,1),
-                                       random.nextInt(12)%4 + 2020,
-                                       random.nextInt(24)%12,
-                                       random.nextInt(47)%28);
-            course.setCoursenum(num);
-            logger.info(tbCourseService.update(course)+"");
-        }
+        //logger.info("edit course...");
+        //Random random = new Random();
+        //for (int i=1; i<21; i++){
+        //    TbCourse course = tbCourseService.selectById(i + 2);
+        //
+        //    String num = String.format("%s%s%s%s",course.getCoursenum().substring(0,1),
+        //                               random.nextInt(12)%4 + 2020,
+        //                               random.nextInt(24)%12,
+        //                               random.nextInt(47)%28);
+        //    course.setCoursenum(num);
+        //    logger.info(tbCourseService.update(course)+"");
+        //}
     }
 }

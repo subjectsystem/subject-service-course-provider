@@ -1,7 +1,6 @@
 package com.miyako.subject.service.course.provider;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubboConfig;
-import com.alibaba.dubbo.container.Main;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
